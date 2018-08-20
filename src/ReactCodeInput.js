@@ -67,6 +67,15 @@ class ReactCodeInput extends Component {
     };
   }
 
+  focus() {
+    const { input } = this.state;
+    const firstEmptyInputIndex = input.indexOf('');
+
+    const fieldToFocus = Math.max(0, firstEmptyInputIndex);
+
+    this.textInput[fieldToFocus].focus();
+  }
+
   handleBlur(e) {
     this.handleTouch(e.target.value);
   }
